@@ -1,4 +1,4 @@
-# MyApp
+# tkinter_project
 
 My first repository on GitHub.
 
