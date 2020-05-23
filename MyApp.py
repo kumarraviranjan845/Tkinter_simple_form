@@ -36,9 +36,6 @@ description_entry = Text(root, height = 15, width = 50)
 description_entry.place(x = 495, y = 190)
 required_label = Label(root, text = '* Required', fg='red').place(x = 841, y = 435)
 
-if topic_entry.get('1.0') != 0 or description_entry.get('1.0') != 0:
-    Button(root, text = 'Save', relief = GROOVE, bg = 'yellow green', fg = 'black', font = ('Times New Roman', 12, 'bold'), padx = 8).place(x = 840 , y = 465)
-
 def save_data():
     topic = topic_entry.get('1.0', 'end-1c')
     description = description_entry.get('1.0', 'end-1c')
