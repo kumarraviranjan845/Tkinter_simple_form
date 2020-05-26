@@ -71,6 +71,6 @@ Button(root, text = 'Reset', relief = GROOVE, bg = '#C0C0C0', fg = 'black', font
                       command = reset_data, padx = 10).place(x = 560 , y = 465)
 
 Button(root, text = 'Exit', relief = GROOVE, bg = 'red', fg = 'white', font = ('Times New Roman', 12, 'bold'),
-                     command = root.destroy, padx = 8).place(x = 660, y = 465)
+                     command = root.destroy, padx = 8).place(x = 635, y = 465)
 
 root.mainloop()
