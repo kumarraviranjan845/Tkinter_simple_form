@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import filedialog
+import os
 import tkinter.messagebox
 import sqlite3
 
@@ -11,8 +11,8 @@ root.title('MyApp')
 my_menu = Menu(root)
 root.config(menu = my_menu)
 
-def browse_files():
-    filename = filedialog.askopenfilename(initialdir = "/", filetypes = (("Text files", "*.txt*"), ("all files", "*.*")))
+def open_file():
+    os.system('data.txt')
 
 file_menu = Menu(my_menu, tearoff = 0)
 my_menu.add_cascade(label = 'File', menu = file_menu)
@@ -51,8 +51,8 @@ def save_data():
         c.execute('CREATE TABLE data(topic text, description text)')
         c.execute('INSERT INTO data VALUES(:topic, :description)', {'topic':topic_entry.get('1.0', 'end-1c'), 'description':description_entry.get('1.0', 'end-1c')})
         conn.commit()
-        #c.execute('SELECT * FROM data WHERE topic = :topic', {'topic': topic_entry.get("1.0", 'end-1c')})
-        #print(c.fetchall())
+        c.execute('SELECT * FROM data WHERE topic = :topic', {'topic': topic_entry.get("1.0", 'end-1c')})
+        print(c.fetchall())
         conn.close()
 
         topic_entry.delete('1.0', END)
